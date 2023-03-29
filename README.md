@@ -6,4 +6,4 @@
 
 ### Author
 
-- Kaniuk Tatiana
+- Kaniuk Tetiana
