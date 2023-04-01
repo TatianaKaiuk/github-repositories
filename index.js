@@ -4,7 +4,6 @@ import { renderUserData } from './scripts/user.js';
 import { renderRepos, cleanReposList } from './scripts/repos.js';
 import { showSpinner, hideSpinner } from './scripts/spinner.js';
 
-
 const defaultUser = {
   avatar_url: 'https://avatars3.githubusercontent.com/u10001',
   name: '',
@@ -29,9 +28,9 @@ const onSearchUser = () => {
       renderRepos(reposList);
       hideSpinner();
     })
-    .catch((err) => {
+    .catch(() => {
       hideSpinner();
-      alert(err.message);
+      alert('Failed to load data');
     });
 };
 
