@@ -1,8 +1,8 @@
-import { fetchUserData, fetchRepositories } from './fetchData.js';
-import { renderUserData } from './user.js';
+import { fetchUserData, fetchRepositories } from './scripts/fetchData.js';
+import { renderUserData } from './scripts/user.js';
 
-import { renderRepos, cleanReposList } from './repos.js';
-import { showSpinner, hideSpinner } from './spinner.js';
+import { renderRepos, cleanReposList } from './scripts/repos.js';
+import { showSpinner, hideSpinner } from './scripts/spinner.js';
 
 
 const defaultUser = {
