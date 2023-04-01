@@ -5,5 +5,5 @@ export const fetchUserData = (userName) => {
 };
 
 export const fetchRepositories = (url) => {
-fetch(url).then(response => response.json())
+return fetch(url).then(response => response.json())
 }
