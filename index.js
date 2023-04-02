@@ -14,24 +14,20 @@ renderUserData(defaultUser);
 const showUserBtnElem = document.querySelector('.name-form__btn');
 const userNameInputElem = document.querySelector('.name-form__input');
 
-const onSearchUser = () => {
+const onSearchUser = async () => {
   showSpinner();
   cleanReposList();
   const userName = userNameInputElem.value;
-  fetchUserData(userName)
-    .then((userData) => {
-      renderUserData(userData);
-      return userData.repos_url;
-    })
-    .then((url) => fetchRepositories(url))
-    .then((reposList) => {
-      renderRepos(reposList);
-      hideSpinner();
-    })
-    .catch(() => {
-      hideSpinner();
-      alert('Failed to load data');
-    });
+  try {
+    const userData = await fetchUserData(userName);
+    renderUserData(userData);
+    const reposList = await fetchRepositories(userData.repos_url);
+    renderRepos(reposList);
+  } catch (err) {
+    alert(er.message);
+  } finally {
+    hideSpinner();
+  }
 };
 
 showUserBtnElem.addEventListener('click', onSearchUser);
