@@ -24,7 +24,7 @@ const onSearchUser = async () => {
     const reposList = await fetchRepositories(userData.repos_url);
     renderRepos(reposList);
   } catch (err) {
-    alert(er.message);
+    alert(err.message);
   } finally {
     hideSpinner();
   }
